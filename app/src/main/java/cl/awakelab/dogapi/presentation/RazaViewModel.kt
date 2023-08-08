@@ -19,7 +19,7 @@ class RazaViewModel(applicacion: Application) : AndroidViewModel(applicacion) {
         repositorio = Repositorio(api, razaDatabase)
     }
 
-    fun getAllTerrenos() = viewModelScope.launch {
+    fun getData() = viewModelScope.launch {
         repositorio.getRazas()
     }
 
