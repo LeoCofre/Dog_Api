@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 
 class RazaViewModel(applicacion: Application) : AndroidViewModel(applicacion) {
 
+    fun razasLiveData() = repositorio.obtenerRazaEntity()
 
     private val repositorio: Repositorio
 
@@ -19,7 +20,7 @@ class RazaViewModel(applicacion: Application) : AndroidViewModel(applicacion) {
         repositorio = Repositorio(api, razaDatabase)
     }
 
-    fun getData() = viewModelScope.launch {
+    fun getAllRazas() = viewModelScope.launch {
         repositorio.getRazas()
     }
 

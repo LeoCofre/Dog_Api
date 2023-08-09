@@ -1,11 +1,13 @@
 package cl.awakelab.dogapi.data
 
+import androidx.lifecycle.LiveData
 import cl.awakelab.dogapi.data.local.RazaDao
 import cl.awakelab.dogapi.data.local.RazaEntity
 import cl.awakelab.dogapi.data.remote.RazaApi
 
 class Repositorio(private val razaApi: RazaApi, private val razaDao: RazaDao) {
 
+    fun obtenerRazaEntity(): LiveData<List<RazaEntity>> = razaDao.getRazas()
     suspend fun getRazas() {
         val response = razaApi.getData()            // Acá llegan los datos
         if (response.isSuccessful){                 // Llegaron los datos?
