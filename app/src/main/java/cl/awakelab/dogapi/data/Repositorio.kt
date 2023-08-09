@@ -1,5 +1,6 @@
 package cl.awakelab.dogapi.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import cl.awakelab.dogapi.data.local.RazaDao
 import cl.awakelab.dogapi.data.local.RazaEntity
@@ -17,6 +18,7 @@ class Repositorio(private val razaApi: RazaApi, private val razaDao: RazaDao) {
                 val razaEntity = RazaEntity(it)
                 razaDao.insertRaza(razaEntity)
             }
-        }
+        }else
+            Log.e("Repositorio", response.errorBody().toString())
     }
 }

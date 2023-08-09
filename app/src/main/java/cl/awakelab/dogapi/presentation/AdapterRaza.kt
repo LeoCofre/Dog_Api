@@ -2,7 +2,9 @@ package cl.awakelab.dogapi.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import cl.awakelab.dogapi.R
 import cl.awakelab.dogapi.data.local.RazaEntity
 import cl.awakelab.dogapi.databinding.ItemLayoutBinding
 
@@ -35,6 +37,9 @@ class AdapterRaza : RecyclerView.Adapter<AdapterRaza.ViewHolder>() {
 
         fun bind(razaEntity: RazaEntity) {
             binding.textItem.text = razaEntity.raza
+            binding.cardViewItem.setOnClickListener{
+                Navigation.findNavController(binding.root).navigate(R.id.action_listFragment_to_detailFragment)
+            }
         }
 
     }
