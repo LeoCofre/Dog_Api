@@ -11,5 +11,5 @@ interface RazaApi {
 
 
     @GET("breed/{id}/images")
-    suspend fun getDetallePerro(@Path("id") id: String): Response<RazaDetalle>
+    suspend fun getDetallePerro(@Path("id") id: String): Response<RazaDetalleRemote>
 }

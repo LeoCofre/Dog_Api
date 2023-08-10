@@ -35,6 +35,7 @@ class ListFragment : Fragment() {
     private fun initAdapter() {
 
         val adapter = AdapterRaza()
+
         binding.rvListado.adapter = adapter
         razaViewModel.razasLiveData().observe(viewLifecycleOwner) {
             adapter.setData(it)

@@ -12,6 +12,8 @@ class RazaViewModel(applicacion: Application) : AndroidViewModel(applicacion) {
 
     fun razasLiveData() = repositorio.obtenerRazaEntity()
 
+    fun detalleLiveData(id: String) = repositorio.obtenerDetalleEntity(id)
+
     private val repositorio: Repositorio
 
     init {
@@ -24,5 +26,8 @@ class RazaViewModel(applicacion: Application) : AndroidViewModel(applicacion) {
         repositorio.getRazas()
     }
 
+    fun getDetallePerroVM(id: String) = viewModelScope.launch {
+        repositorio.getDetallePerro(id)
+    }
 
 }
