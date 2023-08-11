@@ -17,12 +17,12 @@ class MapperTest {
 
         //Then   (espero este resultado)
         assertEquals(id, resultado.razaDetalle)
-        assertEquals(url,resultado.url)
+        assertEquals(url, resultado.url)
 
     }
 
     @Test
-    fun toRazaEntity(){
+    fun toRazaEntity() {
         //Given
         val raza = "Esta es una raza"
 
