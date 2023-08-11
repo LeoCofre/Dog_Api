@@ -44,6 +44,11 @@ class DetailFragment : Fragment() {
 
     private fun initAdapter() {
 
+        val adapter = AdapterDetalle()
+        binding.rvDetail.adapter = adapter
+        razaViewModel.detalleLiveData(param1.toString()).observe(viewLifecycleOwner){
+            adapter.setDataDetalle(it)
+        }
 
     }
 }
