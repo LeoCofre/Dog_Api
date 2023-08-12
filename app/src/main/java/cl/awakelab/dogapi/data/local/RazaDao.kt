@@ -12,6 +12,10 @@ interface RazaDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRaza(razaEntity: RazaEntity)
 
+    //Para Prueba android
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertRaza(razaEntity: List<RazaEntity>)
+
     @Query("Select * from tabla_raza order by raza desc")
     fun getRazas(): LiveData<List<RazaEntity>>
 
@@ -20,6 +24,7 @@ interface RazaDao {
 
     @Query("Select * from tabla_razas_detalle where razaDetalle like :id")
     fun getImagesRaza(id:String):LiveData<List<RazaDetalleEntity>>
+
 
 
 }
